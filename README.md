@@ -9,14 +9,10 @@ It focuses on clean design, smooth animations, responsiveness, and great user ex
 
  **Live Portfolio**
 
- **[https://github.com/chanduyadav103/Chandu-s-Portfolio](https://github.com/chanduyadav103/Chandu-s-Portfolio)**
+ **(https://chandu-s-portfolio.vercel.app/)**
 
-(Add Vercel / GitHub Pages link here after deployment)
-
----
 
  **Tech Stack**
-
  **Frontend**
 
 * HTML5
