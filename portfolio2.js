@@ -1,4 +1,3 @@
-// Smooth scroll to sections
 document.querySelectorAll('[data-target]').forEach(button => {
     button.addEventListener('click', () => {
         const targetId = button.getAttribute('data-target');
@@ -13,7 +12,6 @@ document.querySelectorAll('[data-target]').forEach(button => {
     });
 });
 
-// Navigation scroll effect
 const nav = document.getElementById('main-nav');
 window.addEventListener('scroll', () => {
     if (window.scrollY > 50) {
@@ -23,7 +21,6 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Intersection Observer for fade-in animations
 const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'
@@ -42,7 +39,6 @@ document.querySelectorAll('.observe-fade').forEach(el => {
     fadeObserver.observe(el);
 });
 
-// Image reveal animations
 const imageObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -57,7 +53,6 @@ document.querySelectorAll('.hero-image, .project-media').forEach(img => {
     imageObserver.observe(img);
 });
 
-// Local Time Display
 function updateLocalTime() {
     const now = new Date();
     const options = {
@@ -74,13 +69,11 @@ function updateLocalTime() {
 updateLocalTime();
 setInterval(updateLocalTime, 1000);
 
-// Form Validation
 const contactForm = document.getElementById('contactForm');
 const nameInput = document.getElementById('name');
 const emailInput = document.getElementById('email');
 const messageInput = document.getElementById('message');
 
-// Validation functions
 function validateName(name) {
     const trimmed = name.trim();
     if (trimmed.length === 0) return { valid: false, message: 'Name is required' };
@@ -117,7 +110,6 @@ function clearError(inputId) {
     errorElement.classList.remove('show');
 }
 
-// Real-time validation
 nameInput.addEventListener('blur', () => {
     const result = validateName(nameInput.value);
     result.valid ? clearError('name') : showError('name', result.message);
@@ -133,12 +125,10 @@ messageInput.addEventListener('blur', () => {
     result.valid ? clearError('message') : showError('message', result.message);
 });
 
-// Clear errors on input
 nameInput.addEventListener('input', () => clearError('name'));
 emailInput.addEventListener('input', () => clearError('email'));
 messageInput.addEventListener('input', () => clearError('message'));
 
-// Form submission
 contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
 
@@ -161,7 +151,6 @@ contactForm.addEventListener('submit', (e) => {
 
 });
 
-// Performance optimization: Debounce scroll events
 function debounce(func, wait) {
     let timeout;
     return function executedFunction(...args) {
@@ -174,7 +163,6 @@ function debounce(func, wait) {
     };
 }
 
-// Smooth reveal on page load
 window.addEventListener('load', () => {
     document.body.classList.add('loaded');
 });
